@@ -274,10 +274,10 @@ def plot_prices(prices):
 def display_verus_data(epd, verus_data, verus_price, network_hashrate, cpu_temp, cpu_usage, memory_usage, show_graph=False):
     global current_quote  # Use the global current_quote
     
-    font10 = ImageFont.truetype('Font.ttc', 10)
-    font12 = ImageFont.truetype('Font.ttc', 12)
-    font15 = ImageFont.truetype('Font.ttc', 15)
-    face32 = ImageFont.truetype(('DejaVuSansMono.ttf'), 32)
+    font10 = ImageFont.truetype('Fonts/Font.ttc', 10)
+    font12 = ImageFont.truetype('Fonts/Font.ttc', 12)
+    font15 = ImageFont.truetype('Fonts/Font.ttc', 15)
+    face32 = ImageFont.truetype(('Fonts/DejaVuSansMono.ttf'), 32)
 
     image = Image.new('1', (epd.height, epd.width), 255)
     draw = ImageDraw.Draw(image)
