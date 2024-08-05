@@ -1,7 +1,7 @@
 # verusgotchi
 
 <div style="display: flex; gap: 10px;">  
-    <img src="images/verusgotchi.jpg" width="350">
+    <img src="images/verusgotchi.jpeg" width="350">
 </div>
 
 This project uses a 2.13inch e-ink display with a Raspberry Pi Zero to display verus coin stats using luckpool's API.
