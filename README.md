@@ -30,9 +30,9 @@ This project uses a 2.13inch e-ink display with a Raspberry Pi Zero to display v
    - sudo apt-get install python3-pip
    - sudo apt-get install python3-pil
    - sudo apt-get install python3-numpy
-   - sudo apt install python3-matplotlib
-   - sudo apt install python3-psutil
-   - sudo apt install python3-spidev
+   - sudo apt-get install python3-matplotlib
+   - sudo apt-get install python3-psutil
+   - sudo apt-get install python3-spidev
    <br />
 
 # Wiring and Setup
