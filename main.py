@@ -191,7 +191,7 @@ def update_face(verus_data, first_run):
 
 # Function to get historical prices from CoinGecko
 def get_historical_prices():
-    url = f"https://api.coingecko.com/api/v3/coins/verus-coin/market_chart?vs_currency=usd&days={7}"
+    url = f"https://api.coingecko.com/api/v3/coins/verus-coin/market_chart?vs_currency=usd&days={1}"
     try:
         response = requests.get(url)
         response.raise_for_status()
