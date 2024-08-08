@@ -19,7 +19,6 @@ import psutil
 username = "verusgotchi"
 my_Verus_Wallet = "YOUR_VERUS_WALLET_HERE"
 
-
 # Screen rotation
 screen_rotate = 0
 
@@ -272,7 +271,7 @@ def plot_prices(prices):
     return plot_path
 
 def display_verus_data(epd, verus_data, verus_price, network_hashrate, cpu_temp, cpu_usage, memory_usage, show_graph=False):
-    global current_quote  # Use the global current_quote
+    global current_quote
     
     font10 = ImageFont.truetype('Fonts/Font.ttc', 10)
     font12 = ImageFont.truetype('Fonts/Font.ttc', 12)
@@ -364,8 +363,8 @@ def display_verus_data(epd, verus_data, verus_price, network_hashrate, cpu_temp,
     epd.displayPartial(epd.getbuffer(image))
 
 def main():
-    global last_price_fetch_time, last_graph_display_time  # Declare the variables as global
-    last_face_display_time = time.time()  # Initialize with the current time
+    global last_price_fetch_time, last_graph_display_time 
+    last_face_display_time = time.time() 
     
     epd = epd2in13_V3.EPD()
     epd.init()
@@ -382,7 +381,7 @@ def main():
     cpu_usage = None
     memory_usage = None
     first_run = True 
-    show_graph = False  # Variable to control graph display
+    show_graph = False 
 
     while True:
         current_time = time.time()
@@ -433,7 +432,6 @@ def main():
                 last_quote_update_time = current_time
 
         time.sleep(3)
-
 
 if __name__ == "__main__":
     main()
