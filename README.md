@@ -47,7 +47,7 @@ This project uses a 2.13inch e-ink display with a Raspberry Pi Zero to display v
    cd verusgotchi
 
 # Usage Instructions
-1. Edit `main.py` and add your duino-coin username:
+1. Edit `main.py` and add your verus wallet:
   - Open main.py in a text editor.
     ```
     nano main.py
