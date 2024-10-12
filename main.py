@@ -10,7 +10,6 @@ from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 from waveshare_epd import epd2in13_V3
 from PIL import Image, ImageDraw, ImageFont
-import faces
 import psutil
 
 #########################################################
@@ -18,6 +17,33 @@ import psutil
 #########################################################
 username = "verusgotchi"
 my_Verus_Wallet = "YOUR_VERUS_WALLET_HERE"
+
+LOOK_R = '( ⚆_⚆)'
+LOOK_L = '(☉_☉ )'
+LOOK_R_HAPPY = '( ◕‿◕)'
+LOOK_L_HAPPY = '(◕‿◕ )'
+SLEEP = '(⇀‿‿↼)'
+SLEEP2 = '(≖‿‿≖)'
+AWAKE = '(◕‿‿◕)'
+BORED = '(-__-)'
+INTENSE = '(°▃▃°)'
+COOL = '(⌐■_■)'
+HAPPY = '(•‿‿•)'
+GRATEFUL = '(^‿‿^)'
+EXCITED = '(ᵔ◡◡ᵔ)'
+MOTIVATED = '(☼‿‿☼)'
+DEMOTIVATED = '(≖__≖)'
+SMART = '(✜‿‿✜)'
+LONELY = '(ب__ب)'
+SAD = '(╥ ╥ )'
+ANGRY = "(-_-')"
+HOT = "(☉_☉')"
+HOT2 = "('☉_☉)"
+FRIEND = '(♥‿‿♥)'
+BROKEN = '(☓‿‿☓)'
+DEBUG = '(#__#)'
+UPLOAD = '(1__0)'
+UPLOAD1 = '(1__1)'
 
 # Screen rotation
 screen_rotate = 180
@@ -191,35 +217,35 @@ def update_face(verus_data, first_run):
     cpu_temp_value = float(cpu_temp.replace("°C", "")) if cpu_temp else None
 
     if wifi_status == "NET ERROR":
-        myface.append(faces.SAD)
+        myface.append(SAD)
     elif verus_data["hashrate"] == "0.00 H/s":
-        myface.append(faces.BORED)
+        myface.append(BORED)
     elif cpu_temp_value and cpu_temp_value >= 72:
         current_time = int(time.time())
         if current_time % 2 == 0:
-            myface.append(faces.HOT)
+            myface.append(HOT)
         else:
-            myface.append(faces.HOT2)
+            myface.append(HOT2)
     elif verus_data["hashrate"] != "0.00 H/s":
         if first_run:
-            myface.append(faces.AWAKE)
+            myface.append(AWAKE)
         else:
             current_time = int(time.time())
             state = current_time // 3 % 17
             if state in [0, 1, 2, 3]:
-                myface.append(faces.LOOK_R)
+                myface.append(LOOK_R)
             elif state in [4, 5, 6, 7]: 
-                myface.append(faces.LOOK_L)
+                myface.append(LOOK_L)
             elif state in [8]:
-                myface.append(faces.SLEEP)
+                myface.append(SLEEP)
             elif state in [9, 10, 11, 12]:
-                myface.append(faces.LOOK_R_HAPPY)
+                myface.append(LOOK_R_HAPPY)
             elif state in [13, 14, 15, 16]:
-                myface.append(faces.LOOK_L_HAPPY)
+                myface.append(LOOK_L_HAPPY)
             else: 
-                myface.append(faces.HAPPY)
+                myface.append(HAPPY)
     else:
-        myface.append(faces.HAPPY)
+        myface.append(HAPPY)
 
 def get_historical_prices():
     url = f"https://api.coingecko.com/api/v3/coins/verus-coin/market_chart?vs_currency=usd&days={7}"
@@ -376,7 +402,7 @@ def display_verus_data(epd, verus_data, verus_price, network_hashrate, cpu_temp,
     
     draw.text((5, 15), f"{username}>", font=font12, fill=0)
 
-    if myface and myface[0] == faces.HOT:
+    if myface and myface[0] == HOT:
         current_quote = "It's getting hot!"
         
     if verus_price is not None:
