@@ -366,7 +366,8 @@ def header_info(draw, verus_data, now, font, screen_width=250):
             
 def footer_info(draw, verus_data, font, screen_width=250):
     workers_text = f"Workers: {verus_data['workers']}"
-    paid_text = f"Paid: {verus_data['paid']:,.2f} VRSC"
+    paid_amount = verus_data['paid'] if verus_data['paid'] is not None else 0.00
+    paid_text = f"Paid: {paid_amount:,.2f} VRSC"
     luck_text = f"Luck: {verus_data['estimatedLuck']}"
 
     workers_text_width = draw.textbbox((0, 0), workers_text, font=font)[2]
