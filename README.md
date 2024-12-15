@@ -18,33 +18,28 @@ This project uses a 2.13inch e-ink display with a Raspberry Pi Zero to display v
 
 1. **OS install:**
    - Install Raspberry Pi OS Lite (64-bit) on your Raspberry Pi <br />
-   
+
 2. **Enable SPI & I2C:**
    - Open a terminal on your Raspberry Pi.
    - Run `sudo raspi-config`
    - Navigate to Interfacing Options -> SPI -> Enable.
    - Navigate to Interfacing Options -> I2C -> Enable.
 
-3. **Python libraries:**
-   - sudo apt-get update
-   - sudo apt-get install python3-pip
-   - sudo apt-get install python3-pil
-   - sudo apt-get install python3-numpy
-   - sudo apt-get install python3-matplotlib
-   - sudo apt-get install python3-psutil
-   - sudo apt-get install python3-spidev
-   <br />
+3. Clone the repository:
+   ```bash
+   sudo apt install -y git
+   git clone https://github.com/frogCaller/verusgotchi.git
+   cd verusgotchi
 
 # Wiring and Setup
 1. **Connect 2.13inch e-Ink HAT to Raspberry Pi:**
    - Connect the 2.13inch e-Ink HAT to your Raspberry Pi. <br />
    - Connect the UPS Hat for continuous power supply. This will allow you to move the project anywhere without worrying about power interruptions.
 
-2. Clone the repository:
+2. **Install System and Python Dependencies:**
    ```bash
-   sudo apt install git -y
-   git clone https://github.com/frogCaller/verusgotchi.git
-   cd verusgotchi
+   chmod +x setup.sh
+   ./setup.sh
 
 # Usage Instructions
 1. Edit `main.py` and add your verus wallet:
